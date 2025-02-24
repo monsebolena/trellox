@@ -49,7 +49,7 @@
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="<?=base_url()?>login/register"
                 class="link-danger">Register</a></p>
                 <p><?php 
-                if(isset($data)){echo $data;} 
+                if(isset($data[0])){echo $data[0];} 
                 ?></p>
           </div>
 
