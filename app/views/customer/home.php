@@ -32,9 +32,13 @@
             <tbody>
                 <?php foreach ($data as $key => $customer) { ?>
                     <tr>
-                        <th scope="row"><?=$customer->customer_id?></th>
-                        <td><?=$customer->name?></td>
-                        <td>Otto</td>
+                        <th scope="row"><?= $customer->customer_id ?></th>
+                        <td><?= $customer->name ?></td>
+                        <td>
+                            <i class="fa-solid fa-user-pen"></i>
+                            <i class="fa-solid fa-trash"></i>
+                            <i class="fa-solid fa-eye"></i>
+                        </td>
                     </tr>
                 <?php } ?>
 
