@@ -37,7 +37,7 @@
                         <td>
                             <i class="fa-solid fa-user-pen"></i>
                             <i class="fa-solid fa-trash"></i>
-                            <i class="fa-solid fa-eye"></i>
+                            <a href="<?=base_url()?>customer/view/<?= $customer->customer_id ?>"><i class="fa-solid fa-eye"></i></a>
                         </td>
                     </tr>
                 <?php } ?>
