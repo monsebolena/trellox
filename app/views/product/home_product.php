@@ -11,6 +11,7 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/product.js" defer></script>
 </head>
 
 <body>
@@ -31,27 +32,29 @@
             </div>
             <div class="form-group">
                 <label for="inputAddress">Categoria</label>
-                <select  id="category">
+                <select id="category" required>
+                    <option selected>Choose...</option>
 
                 </select>
             </div>
             <div class="form-group">
                 <label for="">Provider</label>
-                <select  id="provider">
-                    
+                <select id="provider" required>
+                    <option selected>Choose...</option>
+
                 </select>
             </div>
             <div class="row">
                 <div class="form-group col-md-6 col-sm-12">
                     <label for="stock">Stock</label>
-                    <input  type="number" min="0"  class="form-control" id="stock" placeholder="Stock">
+                    <input type="number" min="0" class="form-control" id="stock" placeholder="Stock">
                 </div>
                 <div class="form-group col-md-6 col-sm-12">
                     <label for="price">Price</label>
-                    <input  type="number" min="0"  class="form-control" id="price" placeholder="Price">
+                    <input type="number" min="0" class="form-control" id="price" placeholder="Price">
                 </div>
             </div>
-            
+
 
             <button type="submit" class="btn col-12 btn-primary">Save</button>
         </form>
