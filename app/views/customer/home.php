@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -21,12 +21,12 @@
                 </span>
             </div>
         </nav>
-        <table class="table table-dark table-striped">
+        <table class="table table-dark table-striped w-auto mx-auto">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Operations</th>
+                    <th scope="col" class="text-end">Operations</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@
                     <tr>
                         <th scope="row"><?= $customer->customer_id ?></th>
                         <td><?= $customer->name ?></td>
-                        <td>
+                        <td class="text-end">
                             <i class="fa-solid fa-user-pen"></i>
                             <i class="fa-solid fa-trash"></i>
                             <a href="<?=base_url()?>customer/show/<?= $customer->customer_id ?>"><i class="fa-solid fa-eye"></i></a>
