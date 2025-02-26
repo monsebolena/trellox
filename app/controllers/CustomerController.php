@@ -47,6 +47,17 @@ class CustomerController extends Controller{
         }
         $this->view("new");
     }
+
+    public function delete(...$params){
+        if(isset($params[0])){
+             $customer=Customer::find($params[0]);
+             if($customer){
+                $customer->delete();
+             }
+        }
+        header("Location: ".base_url()."customer");
+
+    }
    
 }
 ?>

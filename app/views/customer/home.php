@@ -36,7 +36,7 @@
                         <td><?= $customer->name ?></td>
                         <td class="text-end">
                             <i class="fa-solid fa-user-pen"></i>
-                            <i class="fa-solid fa-trash"></i>
+                            <a href="<?=base_url()?>customer/delete/<?= $customer->customer_id ?>"><i class="fa-solid fa-trash"></i></a>
                             <a href="<?=base_url()?>customer/show/<?= $customer->customer_id ?>"><i class="fa-solid fa-eye"></i></a>
                         </td>
                     </tr>
