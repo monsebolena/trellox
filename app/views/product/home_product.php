@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label for="">Provider</label>
-                <select id="provider" required>
+                <select id="provider" required placeholder="Choose...">
                     <option selected>Choose...</option>
 
                 </select>
@@ -47,11 +47,11 @@
             <div class="row">
                 <div class="form-group col-md-6 col-sm-12">
                     <label for="stock">Stock</label>
-                    <input type="number" min="0" class="form-control" id="stock" placeholder="Stock">
+                    <input required type="number" min="0" class="form-control" id="stock" placeholder="Stock">
                 </div>
                 <div class="form-group col-md-6 col-sm-12">
                     <label for="price">Price</label>
-                    <input type="number" min="0" class="form-control" id="price" placeholder="Price">
+                    <input required type="number" min="0" class="form-control" id="price" placeholder="Price">
                 </div>
             </div>
 
