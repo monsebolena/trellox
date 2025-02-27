@@ -25,7 +25,14 @@ fetch("http://localhost/tiendamvc/api/providers")
     .catch(err => {
         console.log(err);
     })
-
+    fetch("http://localhost/tiendamvc/api/products")
+    .then(data => data.json())
+    .then(datos => {
+        showproducts(datos);
+    })
+    .catch(err => {
+        console.log(err);
+    })
 document.getElementById("form").onsubmit = function (e) {
     e.preventDefault();
     let product={
