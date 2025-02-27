@@ -41,7 +41,7 @@ document.getElementById("form").onsubmit = function (e) {
         method: 'POST',
         body: JSON.stringify(product),
         headers:{
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded'
         }
     })
     .then(data => data.json())
