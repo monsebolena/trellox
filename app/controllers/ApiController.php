@@ -36,7 +36,8 @@ class ApiController extends Controller{
         $product->stock=$data['stock'];
         $product->price=$data['price'];
         $product->save();
-        $json=json_encode($product);
+        $products=Product::all();
+        $json=json_encode($products);
         header('Content-Type: application/json');
         echo $json;
         exit();
