@@ -1,10 +1,17 @@
 <?php include("app/views/partials/menu.php") ?>
 <br>
 <div class="container">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-text">
+                Detalle Provider
+            </span>
+        </div>
+    </nav>
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <?= $data->name ?>
+                <?= $data->name ?> <strong>Web:</strong> <span><a href="<?= $data->web ?>"><?= $data->web ?></a></span>
             </h2>
 
         </div>

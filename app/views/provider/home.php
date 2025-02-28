@@ -1,8 +1,7 @@
 <?php include("app/views/partials/menu.php") ?>
-<br>
 <div class="container">
-    <h1>Customers list</h1>
-    <a href="<?= base_url() ?>provider/new"><i class="fa-solid fa-plus"></i>New customer</a>
+    <h1>Providers list</h1>
+    <a href="<?= base_url() ?>provider/new"><i class="fa-solid fa-plus"></i>New provider</a>
     <div class="table-responsive">
         <table class="table table-dark table-striped">
             <thead>
@@ -13,21 +12,22 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($data as $key => $customer) { ?>
+                <?php foreach ($data as $key => $provider) { ?>
                     <tr>
-                        <th scope="row"><?= $customer->customer_id ?></th>
-                        <td><?= $customer->name ?></td>
+                        <th scope="row"><?= $provider->provider_id ?></th>
+                        <td><?= $provider->name ?></td>
                         <td class="text-end">
                             <i class="fa-solid fa-user-pen"></i>
-                            <a href="<?= base_url() ?>customer/delete/<?= $customer->customer_id ?>"><i
+                            <a href="<?= base_url() ?>provider/delete/<?= $provider->provider_id ?>"><i
                                     class="fa-solid fa-trash"></i></a>
-                            <a href="<?= base_url() ?>customer/show/<?= $customer->customer_id ?>"><i
+                            <a href="<?= base_url() ?>provider/show/<?= $provider->provider_id ?>"><i
                                     class="fa-solid fa-eye"></i></a>
                         </td>
                     </tr>
                 <?php } ?>
 
-                </tbody>
+
+            </tbody>
         </table>
     </div>
 </div>

@@ -44,9 +44,9 @@ class ApiController extends Controller
         //$products=Product::all();
         //quiero devolver los productos y su categoria y proveedor
         $products = Product::with(['category', 'provider'])
-        ->orderBy('created_at', 'desc')
-        ->take(5)
-        ->get();
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
 
         $json = json_encode($products);
         header('Content-Type: application/json');
@@ -68,10 +68,13 @@ class ApiController extends Controller
     }
     public function deleteproduct(...$params)
     {
-        $data = json_decode(file_get_contents('php://input'), true);
-        $product = Product::find($data['product_id']);
+
+        $product = Product::find($params[0]);
         $product->delete();
-        $products = Product::with(['category', 'provider'])->get();
+        $products = Product::with(['category', 'provider'])
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
         $json = json_encode($products);
         header('Content-Type: application/json');
         echo $json;
