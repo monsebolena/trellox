@@ -18,42 +18,25 @@
         <h1>Admin Shop</h1>
         <div class="menu">
             <ul>
-                <a href="<?= base_url() ?>provider">
+                <a href="<?= base_url() ?>gestor">
                     <li>
                         <div>
                             <i class="fa-solid fa-3x fa-building"></i>
-                            <p>Providers</p>
+                            <p>Gestores</p>
                         </div>
 
                     </li>
                 </a>
-                <a href="<?= base_url() ?>customer">
+                <a href="<?= base_url() ?>colaborador">
                     <li>
                         <div>
                             <i class="fa-solid fa-3x fa-circle-user"></i>
-                            <p>Customer</p>
+                            <p>Colaboradores</p>
                         </div>
 
                     </li>
                 </a>
-                <a href="<?= base_url() ?>product">
-                    <li>
-                        <div>
-                            <i class="fa-solid fa-3x fa-shop"></i>
-                            <p>Products</p>
-                        </div>
-
-                    </li>
-                </a>
-                <a href="<?= base_url() ?>sale">
-                    <li>
-                        <div>
-                        <i class="fa-brands fa-3x fa-salesforce"></i></i>
-                            <p>Sales</p>
-                        </div>
-
-                    </li>
-                </a>
+ 
 
 
             </ul>

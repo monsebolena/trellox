@@ -1,7 +1,7 @@
 <?php
 namespace Formacom\Core;
 class App{
-    protected $controller="Formacom\\Controllers\\LoginController";
+    protected $controller="Formacom\\Controllers\\MainController";
     protected $method="index";
     protected $params=[];
     protected $middlewares = [];
