@@ -14,14 +14,16 @@ class Proyecto extends Model
     protected $fillable = [
         'title',
         'descripcion',
-        'user_id',
+        'user_id', // Este es el gestor que crea el proyecto
     ];
 
+    // Relación con Usuario (un proyecto es creado por un gestor)
     public function gestor()
     {
         return $this->belongsTo(Usuario::class, 'user_id');
     }
 
+    // Relación con Tareas (un proyecto tiene muchas tareas)
     public function tareas()
     {
         return $this->hasMany(Tarea::class, 'project_id');

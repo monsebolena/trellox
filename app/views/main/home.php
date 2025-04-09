@@ -15,7 +15,7 @@
 
 <body>
     <div class="container">
-        <h1>Admin Shop</h1>
+        <h1>Trellox</h1>
         <div class="menu">
             <ul>
                 <a href="<?= base_url() ?>gestor">
