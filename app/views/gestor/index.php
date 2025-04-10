@@ -22,12 +22,6 @@
         <!-- Crear Proyecto -->
         <li><a href="<?= base_url() ?>gestor/crear_proyecto">Crear Proyecto</a></li>
 
-        <!-- Ver un Proyecto específico (Ejemplo con ID 1) -->
-        <li><a href="<?= base_url() ?>gestor/ver_proyecto/1">Ver Proyecto (Ejemplo ID: 1)</a></li>
-
-        <!-- Editar un Proyecto específico (Ejemplo con ID 1) -->
-        <li><a href="<?= base_url() ?>gestor/editar_proyecto/1">Editar Proyecto (Ejemplo ID: 1)</a></li>
-
         <!-- Invitaciones -->
         <li><a href="<?= base_url() ?>gestor/invitaciones">Ver Invitaciones</a></li>
 

@@ -1,34 +1,42 @@
+<?php
+// /app/views/colaborador/perfil.php
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil - Colaborador</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <div class="container mt-5">
-    <h1>Mi Perfil</h1>
+    <div class="profile-container">
+        <h2>Editar Perfil</h2>
 
-    <form action="<?=base_url()?>colaborador/actualizar_perfil" method="post">
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" value="[Nombre]" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="email" name="email" value="[Email]" required>
-      </div>
-      <div class="mb-3">
-        <label for="telefono" class="form-label">Teléfono</label>
-        <input type="text" class="form-control" id="telefono" name="telefono" value="[Teléfono]" required>
-      </div>
-      <div class="mb-3">
-        <label for="foto" class="form-label">Foto de perfil</label>
-        <input type="file" class="form-control" id="foto" name="foto">
-      </div>
-      <button type="submit" class="btn btn-primary">Actualizar perfil</button>
-    </form>
-  </div>
+        <form action="/colaborador/actualizar_perfil" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" value="<?php echo htmlspecialchars($usuario['nombre']); ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" id="apellidos" value="<?php echo htmlspecialchars($usuario['apellidos']); ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" name="telefono" id="telefono" value="<?php echo htmlspecialchars($usuario['telefono']); ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto:</label>
+                <input type="file" name="foto" id="foto">
+                <p>Foto actual: <img src="/uploads/<?php echo $usuario['foto']; ?>" alt="Foto de perfil" width="100"></p>
+            </div>
+
+            <button type="submit">Actualizar Perfil</button>
+        </form>
+    </div>
 </body>
 </html>

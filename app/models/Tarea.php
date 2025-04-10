@@ -9,33 +9,43 @@ class Tarea extends Model
 {
     use HasFactory;
 
-    protected $table = 'tarea';
+    // Definir la tabla en la base de datos
+    protected $table = 'tareas';
 
+    // Definir los campos de la tabla
     protected $fillable = [
-        'title',
-        'duedate',
-        'startdate',
-        'status',
-        'project_id',
-        'user_id',
-        'descripcion',
+        'titulo', 'descripcion', 'fecha_vencimiento', 'estado', 'proyecto_id', 'colaborador_id'
     ];
 
     // Relación con Proyecto (una tarea pertenece a un proyecto)
     public function proyecto()
     {
-        return $this->belongsTo(Proyecto::class, 'project_id');
+        return $this->belongsTo(Proyecto::class, 'proyecto_id');
     }
 
-    // Relación con Usuario (una tarea está asignada a un usuario)
-    public function usuario()
+    // Relación con Usuario (una tarea está asignada a un colaborador)
+    public function colaborador()
     {
-        return $this->belongsTo(Usuario::class, 'user_id');
+        return $this->belongsTo(Usuario::class, 'colaborador_id');
     }
 
-    // Relación con Comentarios (una tarea tiene muchos comentarios)
-    public function comentarios()
+    // Cambiar el estado de una tarea
+    public function cambiarEstado($estado)
     {
-        return $this->hasMany(Comentario::class, 'task_id');
+        $this->estado = $estado;
+        $this->save();  // Actualiza el estado de la tarea
+    }
+
+    // Obtener tareas pendientes de un proyecto
+    public static function obtenerTareasPendientes($proyecto_id)
+    {
+        return self::where('proyecto_id', $proyecto_id)->where('estado', 'Pendiente')->get();
+    }
+
+    // Obtener tareas asignadas a un colaborador
+    public static function obtenerTareasPorColaborador($colaborador_id)
+    {
+        return self::where('colaborador_id', $colaborador_id)->get();
     }
 }
+?>

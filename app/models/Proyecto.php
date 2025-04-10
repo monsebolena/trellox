@@ -1,31 +1,23 @@
 <?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+namespace Formacom\Models;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Proyecto extends Model
 {
-    use HasFactory;
 
+   
+    // Definir la tabla en la base de datos
     protected $table = 'proyecto';
 
-    protected $fillable = [
-        'title',
-        'descripcion',
-        'user_id', // Este es el gestor que crea el proyecto
-    ];
+    protected $primaryKey = 'id';
+    public $timestamps = false; // Desactivar los timestamps automáticos
 
-    // Relación con Usuario (un proyecto es creado por un gestor)
-    public function gestor()
+    // Definir las relaciones con otros modelos si es necesario
+    //Los proyectos pertenecen a Usuario user_id    
+    public function usuario()
     {
-        return $this->belongsTo(Usuario::class, 'user_id');
-    }
-
-    // Relación con Tareas (un proyecto tiene muchas tareas)
-    public function tareas()
-    {
-        return $this->hasMany(Tarea::class, 'project_id');
+        return $this->belongsTo('App\Models\Usuario', 'user_id');
     }
 }
+?>

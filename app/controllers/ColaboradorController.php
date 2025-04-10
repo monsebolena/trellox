@@ -7,27 +7,22 @@ class ColaboradorController extends Controller {
 
     // Mostrar la página de inicio (index)
     public function index(...$params) {
-        $this->view('index');  // Mantengo el index, como indicaste
+        $this->view('index');  // Cargar la vista de inicio para el colaborador
     }
 
     // Mostrar el login del colaborador
     public function login(...$params) {
-        $this->view('colaborador/login');  // Cargar la vista de login
-    }
-
-    // Mostrar el dashboard del colaborador
-    public function dashboard(...$params) {
-        $this->view('colaborador/dashboard');  // Cargar la vista de dashboard
+        $this->view('login');  // Cargar la vista de login
     }
 
     // Mostrar las tareas del colaborador
     public function tareas(...$params) {
-        $this->view('colaborador/tareas');  // Cargar la vista de tareas
+        $this->view('tareas');  // Cargar la vista de tareas
     }
 
     // Mostrar el perfil del colaborador
     public function perfil(...$params) {
-        $this->view('colaborador/perfil');  // Cargar la vista de perfil
+        $this->view('perfil');  // Cargar la vista de perfil
     }
 }
 ?>

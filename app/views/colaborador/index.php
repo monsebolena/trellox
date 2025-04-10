@@ -1,30 +1,21 @@
+<?php
+// /app/views/colaborador/index.php
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colaborador - Inicio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Bienvenido - Colaborador</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <div class="container mt-5">
-    <h1>Bienvenido, Colaborador</h1>
-    <p>Aquí es donde puedes gestionar tus tareas y tu perfil.</p>
-    
-    <h3>Acciones para el Colaborador:</h3>
-    <ul>
-        <!-- Ver el perfil del colaborador -->
-        <li><a href="<?= base_url() ?>colaborador/perfil">Ver Perfil</a></li>
+    <div class="container">
+        <h1>Bienvenido al sistema Trellox</h1>
+        <p>Aquí podrás gestionar las tareas que te han sido asignadas y mantener tu perfil actualizado.</p>
         
-        <!-- Ver las tareas del colaborador -->
-        <li><a href="<?= base_url() ?>colaborador/tareas">Mis Tareas</a></li>
-
-        <!-- Dashboard del colaborador -->
-        <li><a href="<?= base_url() ?>colaborador/dashboard">Dashboard</a></li>
-        
-    </ul>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <a href="/colaborador/tareas">Ver mis tareas</a>
+        <a href="/colaborador/perfil">Editar mi perfil</a>
+    </div>
 </body>
 </html>
