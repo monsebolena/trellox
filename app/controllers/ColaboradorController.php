@@ -23,6 +23,18 @@ class ColaboradorController extends Controller {
     // Mostrar el perfil del colaborador
     public function perfil(...$params) {
         $this->view('perfil');  // Cargar la vista de perfil
+    
     }
+
+    public function dashboard(...$params) {
+        $usuario = $_SESSION['usuario'] ?? 'Invitado'; // O el sistema que uses para manejar sesiones
+        $proyectos = $this->modeloProyecto->obtenerProyectosPorUsuario($usuario); // O como lo tengas definido
+    
+        $this->view('gestor/dashboard', [
+            'usuario' => $usuario,
+            'proyectos' => $proyectos
+        ]);
+    }
+    
 }
 ?>
